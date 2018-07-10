@@ -24,17 +24,23 @@
             </div>
         </div>
         <!-- #User Info -->
+        <a href="#" class="hide btn menuIcon">
+            <i class="material-icons hideLeftMenu">keyboard_arrow_left</i>
+            <i class="hide material-icons showLeftMenu">keyboard_arrow_right</i>
+        </a>
         <!-- Menu -->
         <div class="menu">
             <ul class="list">
-                <li class="header">MAIN NAVIGATION</li>
+                <li class="header">
+                    MAIN NAVIGATION
+                </li>
                 <li @if ($controller == "dashboard") class="active" @endif>
                     <a href="{{ url('admin/dashboard') }}">
                         <i class="material-icons">home</i>
-                        <span>Dashboard</span>
+                        <span>{{ trans('adminbsb.dashboard') }}</span>
                     </a>
                 </li>
-                <li>
+                {{--<li>
                     <a href="pages/typography.html">
                         <i class="material-icons">text_fields</i>
                         <span>Typography</span>
@@ -45,8 +51,8 @@
                         <i class="material-icons">layers</i>
                         <span>Helper Classes</span>
                     </a>
-                </li>
-                <li>
+                </li>--}}
+                {{--<li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">widgets</i>
                         <span>Widgets</span>
@@ -91,25 +97,13 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li>--}}
 
                 <li class="header">LABELS</li>
                 <li @if ($controller == "category") class="active" @endif>
                     <a href="{{ url('admin/category') }}">
                         <i class="material-icons">donut_large</i>
-                        <span>Category</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">
-                        <i class="material-icons">donut_large</i>
-                        <span>Warning</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">
-                        <i class="material-icons">donut_large</i>
-                        <span>Information</span>
+                        <span>{{ trans('adminbsb.category') }}</span>
                     </a>
                 </li>
             </ul>

@@ -1,7 +1,18 @@
 <?php
 
 return [
+
+// menu
     'dashboard' => 'Quản trị',
-    'success' => 'success',
-    'fail' => 'fail'
+    'category' => 'Danh mục',
+
+// notice - reply
+
+
+// paging
+    'paging_total' => 'Tổng số có',
+    'paging_entries' => 'dòng'
+
+
+
 ];

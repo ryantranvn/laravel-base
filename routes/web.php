@@ -35,7 +35,7 @@ Route::prefix('admin')->group( function() {
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
 
     Route::get('/dashboard', 'DashboardController@index')->name('admin.dashboard');
-    Route::get('/category', 'CategoryController@index')->name('admin.category');
+    Route::resource('/category', 'CategoryController');
 
     /* route 404 for admin */
     Route::get('404', function () {
@@ -46,7 +46,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
 /* API *********************************** */
 Route::group(['namespace' => 'Api', 'prefix' => 'api'], function()
 {
-    //Route::resource('event', 'EventController');
+    Route::post('/get-category-tree', 'AjaxController@getCategoryTree');
 });
 
 

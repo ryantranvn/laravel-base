@@ -1,34 +1,173 @@
+// Color
+$colorRed : #F44336;
+$colorBlue : #1D8BF1;
+$colorLink : #00BCD4;
+$colorText : #555555;
+
 body {
+    // Common classes
     .hiddenInput {
         width: 0px;
         height: 0px;
         opacity: 0;
     }
-}
-// datatables
-table.dataTable thead .sorting::after,
-table.dataTable thead .sorting_asc::after {
-    display:none;
-}
+    input:read-only {
+        cursor: not-allowed;
+    }
+    // menuIcon
+    .menuIcon {
+        float: left;
 
-table.dataTable thead .sorting_desc::after {
-    display:none;
-}
+        a {
+            font-size: 18px;
+            color: #000;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+    }
+    // buttons
+    .btnCreate {
+    }
+    // textarea
+    textarea {
+        resize: vertical;
+    }
+    // btnSpinner
+    .spinner {
+        .btnSpinner {
+            height: 15px;
+            display: block;
+            position: absolute;
+            z-index: 1;
+            text-align: center;
+            padding: 0px;
 
-table.dataTable thead .sorting {
-    background-image: url(https://datatables.net/media/images/sort_both.png);
-    background-repeat: no-repeat;
-    background-position: center right;
-}
+            &:hover {
+                color: $colorBlue;
+                cursor: pointer;
+            }
 
-table.dataTable thead .sorting_asc {
-    background-image: url(https://datatables.net/media/images/sort_asc.png);
-    background-repeat: no-repeat;
-    background-position: center right;
-}
+            i.material-icons {
+                margin-top: -3px;
+            }
+        }
+        .btnSpinnerUp {
+            right: 0;
+            top: 0;
+        }
+        .btnSpinnerDown {
+            right: 0;
+            top: 15px;
+        }
+    }
 
-table.dataTable thead .sorting_desc {
-    background-image: url(https://datatables.net/media/images/sort_desc.png);
-    background-repeat: no-repeat;
-    background-position: center right;
+
+    // maxlength
+    .maxlength-feedback {
+        position: absolute;
+        right: 0;
+        top: -20px;
+        color: $colorText;
+        font-size: 13px;
+    }
+
+    // breadcrumb
+    .breadcrumb {
+        font-size: 15px;
+
+        a {
+            color: $colorText !important;
+
+            &:hover {
+                color: $colorRed !important;
+            }
+        }
+
+        li {
+            text-transform: capitalize;
+        }
+        li.active {
+            font-weight: bold;
+        }
+    }
+
+    // data table
+    .dataTables_paginate {
+        nav {
+            text-align: right;
+            ul.pagination {
+                margin: 0 !important;
+            }
+        }
+    }
+
+    table.table {
+        thead {
+            th.sorting {
+                background: url(../images/sort_both.png) no-repeat center right;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            th.sorting.sorting_asc {
+                background: url(../images/sort_asc.png) no-repeat center right;
+            }
+            th.sorting.sorting_desc {
+                background: url(../images/sort_desc.png) no-repeat center right;
+            }
+        }
+    }
+
+    // easy tree
+    .topTree {
+    }
+    .easy-tree {
+        margin-left: 30px;
+        background-color: transparent;
+        color: $colorText;
+    }
+    .easy-tree li span.glyphicon {
+        margin-right: 10px;
+    }
+    .easy-tree li::before { // line vertical
+        border-left: 1px solid $colorText;
+    }
+    .easy-tree li::after { // line horizontal
+        border-top: 1px solid $colorText;
+    }
+    .easy-tree li > span { // border item
+        border: 1px solid $colorText;
+    }
+    .easy-tree li > span > a { // text
+        color: $colorText;
+
+        &:hover {
+            color: white;
+        }
+    }
+    .easy-tree li > span:hover,
+    .easy-tree li.parent_li > span:hover,
+    .easy-tree li.parent_li > span:hover + ul li span { // hover
+        background: $colorLink;
+        color: white;
+    }
+    .easy-tree li.parent_li > span:hover + ul li.li_selected span {
+        background: $colorBlue;
+        color: white;
+    }
+
+    .easy-tree li.li_selected > span,
+    .easy-tree li.li_selected > span > a {
+        color: $colorRed;
+        background: transparent;
+    }
+
+    .easy-tree li.li_selected > span:hover,
+    .easy-tree li.li_selected > span:hover > a {
+        color: $colorRed;
+        background: transparent;
+    }
+
+
 }

@@ -8,10 +8,11 @@
     <!-- Favicon-->
     <link rel="icon" href="{{ asset('admin/images/favicon.png') }}" type="image/x-icon">
     <!-- Google Fonts -->
-    @include('adminbsb.partials.css_links')
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
-    <body class="theme-red">
+    @include('adminbsb.partials.css_links')
+    @include('adminbsb.partials.pass_to_js')
+    <body class="theme-red ls-closed">
         @include('adminbsb.partials.page_loader')
         @include('adminbsb.partials.search_bar')
         @include('adminbsb.partials.top_bar')
